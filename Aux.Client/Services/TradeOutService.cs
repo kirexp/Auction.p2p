@@ -32,7 +32,7 @@ public class TradeOutService : AuxGenerated.TradeOut.TradeOutBase
                 });
                 var message =
                     $"Bid has been placed successfully on lot: {potentialLot.Title}, Amount: {request.Amount}, Previous bid was: {highestBid}";
-                Console.WriteLine();
+                Console.WriteLine(message);
                 return Task.FromResult(new BidReply
                 {
                     IsSuccess = true,
