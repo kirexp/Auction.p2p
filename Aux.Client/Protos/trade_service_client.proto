@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+option csharp_namespace = "AuxClientTGenerated";
+
+package Trade;
+
+
+service Trades {
+  rpc StartLot(StartLotRequest) returns (StartLotReply);
+  rpc GetList(GetListRequest) returns (GetListReply);
+}
+
+message StartLotRequest {
+  string Id = 1;
+  string Title = 2;
+  string ClientId = 3;
+}
+
+message StartLotReply {
+
+}
+
+message GetListRequest {
+
+}
+
+message GetListReply {
+  repeated Lot Lots = 1;
+}
+message Lot {
+  string Id = 1;
+  string Title=2;
+  string Addr=3;
+}
+
+service TradeOut {
+  rpc Bid(BidRequest) returns (BidReply);
+}
+
+message BidRequest {
+  string SessionId = 1;
+  string LotId = 2;
+  double Amount = 3;
+}
+
+message BidReply {
+  bool IsSuccess=1;
+  string Message=2;
+}

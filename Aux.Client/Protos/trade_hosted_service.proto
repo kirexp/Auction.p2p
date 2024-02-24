@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+option csharp_namespace = "AuxGenerated";
+
+package Trade;
+
+// The greeting service definition.  
+service Trade {
+  // Sends a greeting  
+  rpc InitiateTrade (InitiateTradeRequest) returns (InitiateTradeReply);
+}
+
+service TradeOut {
+  rpc Bid(BidRequest) returns (BidReply);
+}
+
+message BidRequest {
+  string SessionId = 1;
+  string LotId = 2;
+  double Amount = 3;
+}
+
+message BidReply {
+  bool IsSuccess=1;
+  string Message=2;
+}
+
+// The request message containing the user's name.  
+message InitiateTradeRequest {
+  string Id = 1;
+  string IpAddress = 2;
+}
+
+// The response message containing the greetings.  
+message InitiateTradeReply {
+  string time = 1;
+}
+
+
+// The greeting service definition.  
+service Session {
+  // Sends a greeting  
+  rpc NotifyConnect (NotifyConnectRequest) returns (NotifyConnectReply);
+}
+
+// The request message containing the user's name.  
+message NotifyConnectRequest {
+  string Id = 1;
+  string IpAddress = 2;
+}
+
+// The response message containing the greetings.  
+message NotifyConnectReply {
+  string time = 1;
+}
