@@ -2,6 +2,7 @@
 Please take into considiration the fact that I had a time frame and some of the tactics\approaches were implemented ASAP. 
 Some Variables were named in a very ugly way.
 Separation of Layers and Business\Domain units has not been done as well. 
+Some places of code have not-necessary converts\casts like double to decimal, guid -> string -> guid and etc.
 
 ## Implemented
 - Centralized service that holds information about client's ip-addresses. 
