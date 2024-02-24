@@ -69,7 +69,7 @@ public class Program
                     Environment.Exit(0);
                     break;
                 }
-                case "start-lot":
+                case "create-lot":
                 {
                     var title = await actions.StartLot();
                     Console.WriteLine($"Lot: {title} has been created");
