@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option csharp_namespace = "AuxClientGenerated";
+
+package Session;
+// The greeting service definition.  
+service Session {
+  // Sends a greeting  
+  rpc NotifyConnect (NotifyConnectRequest) returns (NotifyConnectReply);
+}
+
+// The request message containing the user's name.  
+message NotifyConnectRequest {
+  string Id = 1;
+  string IpAddress = 2;
+}
+
+// The response message containing the greetings.  
+message NotifyConnectReply {
+  string time = 1;
+}
